@@ -1,0 +1,37 @@
+{
+  "name": "gamez/library-template",
+  "type": "library",
+  "description": "Template for a new PHP library",
+  "keywords": ["project", "template", "project-template"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jérôme Gamez",
+      "email": "jerome@gamez.name"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ~8.0.0"
+  },
+  "require-dev": {
+    "ergebnis/php-cs-fixer-config": "^2.8",
+    "phpstan/extension-installer": "^1.1",
+    "phpstan/phpstan": "^0.12.63",
+    "phpstan/phpstan-deprecation-rules": "^0.12.6",
+    "phpstan/phpstan-phpunit": "^0.12.17",
+    "phpstan/phpstan-strict-rules": "^0.12.7",
+    "phpunit/phpunit": "^9.5",
+    "psalm/plugin-phpunit": "^0.15.0",
+    "vimeo/psalm": "^4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Gamez\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Gamez\\Tests\\": "tests"
+    }
+  }
+}
