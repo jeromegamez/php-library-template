@@ -1,13 +1,18 @@
 .DEFAULT_GOAL:= help
 
 .PHONY: it
-it: static-code-analysis tests
+it: coding-standards static-code-analysis tests
 
 .PHONY: code-coverage
 code-coverage: export XDEBUG_MODE=coverage
 code-coverage: vendor ## Executes the test suite and generates code coverage reports
 	mkdir -p .build/phpunit
 	vendor/bin/phpunit --coverage-text
+
+.PHONY: coding-standards
+coding-standards: vendor ## Fixes code style issues with friendsofphp/php-cs-fixer
+	mkdir -p .build/php-cs-fixer
+	vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --verbose
 
 .PHONY: help
 help: ## This help
